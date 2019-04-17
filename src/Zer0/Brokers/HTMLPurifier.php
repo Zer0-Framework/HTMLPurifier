@@ -25,4 +25,14 @@ class HTMLPurifier extends Base
         $config->set('Cache.SerializerPath', $html_purifier_cache_dir);
         return new \HTMLPurifier($config);
     }
+
+    /**
+     * @param string $name
+     * @param bool $caching
+     * @return \HTMLPurifier
+     */
+    public function get(string $name = '', bool $caching = true): \HTMLPurifier
+    {
+        return parent::get($name, $caching);
+    }
 }
